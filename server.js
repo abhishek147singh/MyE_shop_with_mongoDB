@@ -18,7 +18,6 @@ mongoose.connect(process.env.MONGOODB_URL).then(() => {
 
 app.use(express.json());
 app.use(express.urlencoded({extended : true }));
-
 app.use('/api/seed/' , seedRouter );
 app.use('/api/products' , productRouter);
 app.use('/api/users' , userRouter);
