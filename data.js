@@ -58,8 +58,4 @@ export default {
         countInStock:5
     }
 ],
-Users:[
-    {name : 'Abhishek' , email: 'abhi@example.com' , password : bcrypt.hashSync('123456') , isAdmin:true },
-    {name : 'shidu' , email: 'shidu@example.com' , password : bcrypt.hashSync('123456') , isAdmin:false },
-]
 }
