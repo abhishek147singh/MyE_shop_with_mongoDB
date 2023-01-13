@@ -29,7 +29,6 @@ import AdminUserScreen from './screens/AdminUserScreen';
 import EditProductScreen from "./screens/EditProductScreen";
 import EditUserScreen from './screens/EditUserScreen';
 import CancelIcon from '@mui/icons-material/Cancel';
-import PracticeApiScreen from './screens/PracticeApiScreen';
 
 function App() {
   const [sidebarIsOen, setSidebarIsOpen] = useState(false);
@@ -151,11 +150,6 @@ function App() {
           <Route path='/admin/user/:id' element={
             <AdminRoute >
               <EditUserScreen />
-            </AdminRoute>
-          }></Route>
-          <Route path='/admin/practice_api' element={
-            <AdminRoute >
-              <PracticeApiScreen />
             </AdminRoute>
           }></Route>
         </Routes>
