@@ -128,10 +128,9 @@ export default function Header(props) {
                 }}
               >
                 <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/dashboard" style={{ color: "black" }} >Dashboard</Link></MenuItem>
-                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/orders" style={{ color: "black" }} >Orders   </Link></MenuItem>
-                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/products" style={{ color: "black" }} >Products </Link></MenuItem>
-                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/users" style={{ color: "black" }} >Users    </Link></MenuItem>
-                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/practice_api" style={{ color: "black" }} >Practice Api</Link></MenuItem>
+                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/orders" style={{ color: "black" }} >   Orders</Link></MenuItem>
+                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/products" style={{ color: "black" }} > Products </Link></MenuItem>
+                <MenuItem onClick={() => { setAnchor2(null) }}><Link to="/admin/users" style={{ color: "black" }} >    Users    </Link></MenuItem>
               </Menu>
             </div>
           )}
