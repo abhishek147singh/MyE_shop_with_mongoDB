@@ -71,7 +71,7 @@ export default function DeshboardScreen() {
             <Grid item md={3} sm={6} xs={12}>
               <Card sx={{ p: "10px" }} >
                 <CardActionArea>
-                  <h2>${totalAmount}</h2>
+                  <h2>${ totalAmount.toFixed(2) }</h2>
                   <p>Sales</p>
                   <Link style={{ color: "#000", fontWeight: "500", fontSize: "18", padding: "5px", marginTop: "8px", marginBottom: "8px", textTransform: "uppercase" }} to="/admin/dashboard">
                     View sales
