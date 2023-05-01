@@ -23,9 +23,6 @@ app.use('/api/products' , productRouter);
 app.use('/api/users' , userRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/reviews', reviewRouter);
-app.use('*', (req , res) => {
-    res.sendFile("/world/build/index.html");
-});
 
 app.use((err , req , res , next) => {
     res.status(500).send({message : err.message }); 
@@ -37,6 +34,9 @@ app.get("/api/keys/paypal" , (req , res) => {
 
 if(process.env.NODE_ENV == "production"){
     app.use(express.static("world/build"));
+    app.use('*', (req , res) => {
+         res.sendFile("world/build/index.html");
+    });
 }
 
 
