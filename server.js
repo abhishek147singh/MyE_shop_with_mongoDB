@@ -6,6 +6,7 @@ import productRouter from "./routes/ProductRoutes.js";
 import userRouter from "./routes/UserRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import reviewRouter from "./routes/ReviewRoute.js";
+import path from "path";
 
 const app = express();
 dotenv.config();
@@ -23,6 +24,9 @@ app.use('/api/products' , productRouter);
 app.use('/api/users' , userRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/reviews', reviewRouter);
+app.use('*' , (req , res) => {
+    res.sendFile(path.resolve(__dirname , "world" , "build" , "index.html" ));
+});
 
 app.use((err , req , res , next) => {
     res.status(500).send({message : err.message }); 
@@ -35,6 +39,7 @@ app.get("/api/keys/paypal" , (req , res) => {
 if(process.env.NODE_ENV == "production"){
     app.use(express.static("world/build"));
 }
+
 
 app.listen(process.env.PORT || 5000 , () => {
     console.log("server is running");
