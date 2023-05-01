@@ -6,7 +6,6 @@ import productRouter from "./routes/ProductRoutes.js";
 import userRouter from "./routes/UserRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import reviewRouter from "./routes/ReviewRoute.js";
-import path from "path";
 
 const app = express();
 dotenv.config();
@@ -24,8 +23,8 @@ app.use('/api/products' , productRouter);
 app.use('/api/users' , userRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/reviews', reviewRouter);
-app.use('*' , (req , res) => {
-    res.sendFile(path.resolve(__dirname , "world" , "build" , "index.html" ));
+app.use('*', (req , res) => {
+    res.sendFile("/world/build/index.html");
 });
 
 app.use((err , req , res , next) => {
