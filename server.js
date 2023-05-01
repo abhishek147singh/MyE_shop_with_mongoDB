@@ -6,6 +6,7 @@ import productRouter from "./routes/ProductRoutes.js";
 import userRouter from "./routes/UserRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import reviewRouter from "./routes/ReviewRoute.js";
+import path from 'path';
 
 const app = express();
 dotenv.config();
@@ -35,7 +36,7 @@ app.get("/api/keys/paypal" , (req , res) => {
 if(process.env.NODE_ENV == "production"){
     app.use(express.static("world/build"));
     app.use('*', (req , res) => {
-         res.sendFile("world/build/index.html");
+         res.sendFile(path.resolve(__dirname , "world/build/index.html"));
     });
 }
 
